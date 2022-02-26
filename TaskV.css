@@ -16,20 +16,7 @@
 transform: translate(-50%,-50%) scale(1);
 }
 
-.AddTask{
-    position:absolute;
-    top : 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0);
 
-    background-color: rgb(198, 168, 247);
-    padding: 10px;
-    width: 1072px;
-    height: 479px;
-    z-index: 50;
-    border-radius: 30px;
-    transition: 200ms;
-}
 .AddTask.active {
 transform: translate(-50%,-50%) scale(1);
 }
@@ -226,4 +213,129 @@ main{
 .calendar{
     grid-column: 3;
     grid-row: 3;
+}
+.AddTask{
+    position:absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 1072px;
+    height: 479px;
+    z-index: 50;
+    border-radius: 30px;
+    transition: 200ms;
+}
+#title{
+    font-size: 32px;
+    border:0px;
+    border-bottom: solid 2px #FF9F45 ;
+    background-color: transparent;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 55px;
+    text-align: left;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: #FF9F45;
+    width:60%
+
+}
+::placeholder{
+    color: #FF9F45;
+}
+.r_1,.r_2,.r_3,.r_4{
+    margin-left: 15%;
+    color: #FF9F45;
+    font-size: 13px;
+    padding: 20px;
+
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffa500;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+.AddTask p{
+    margin: 0px;
+    margin-left: 15%;
+    color: #FF9F45;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+
+}
+#StartDate,#StartTime{
+    border: 0px;
+    border-bottom: solid 2px #FF9F45;
+    color: #FF9F45;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    margin-left: 15%;
+
+}
+#StartTime{
+    margin: 0;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #FF9F45;
+    opacity: 0;
+    /* display: block; */
+    /* background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat; */
+    /* width: 20px; */
+    /* height: 20px; */
+    /* border-width: thin; */
+}
+input[type="time"]::-webkit-calendar-picker-indicator { background: none; display:none; }
+
+#Link,#Description{
+    margin-left: 15%;
+    border: 0;
+    border-bottom: solid 2px #FF9F45;
+    font-size: 20px;
+    width: 60%;
+}
+#AddToTask,#Reset{
+    border: 0px;
+    background-color: #FF9F45;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+}
+#AddToTask{
+    margin-left: 15%;
+}
+.closekro{
+    background: transparent;
+    border: 0;
+    color: #FF9F45;
+    font-size: 25px;
 }
