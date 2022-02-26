@@ -1,19 +1,67 @@
 .Info{
-    position:fixed;
+    position:absolute;
     top : 50%;
     left: 50%;
     transform: translate(-50%,-50%) scale(0);
-    border:3px solid black;
-    background-color: white; /* colour must be their*/
-    transition: 200ms; /* this will make it zoom out and in smoothly */
+
+    background-color: rgb(198, 168, 247);
     padding: 10px;
-    width: 500px;
-    z-index: 50; /*this is important to keep it above all*/
+    width: 1072px;
+    height: 479px;
+    z-index: 50;
+    border-radius: 30px;
+    transition: 200ms;
 }
 .Info.active {
 transform: translate(-50%,-50%) scale(1);
 }
+.Text{
+    position: absolute;
+    text-align:justify;
+    width: 174px;
+    height: 75px;
+    left: 45%;
+    top: 26px;
 
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+}
+.Content{
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 56px;
+
+    height: 400px;
+    top: 12%;
+    text-align: justify;
+
+}
+.Infobutton{
+    position: absolute;
+    width: 200px;
+    height: 56px;
+    left: 1326px;
+    top: 119px;
+    border: 0ch;
+
+    background: #7958ee;
+    border-radius: 180px 0px 0px 180px;
+    text-align: left ;
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 56px;
+    padding-left: 30px;
+    text-decoration: white ;
+}
 #overlay {
     position: fixed;
     opacity: 0;
@@ -30,4 +78,16 @@ transform: translate(-50%,-50%) scale(1);
     opacity: 1;
     pointer-events: all;
 }
-
+#Info_Popup_Header_Close{
+    background: transparent;
+    border: 0;
+    font-size: larger;
+    text-align: right;
+    left: 1266px;
+}
+.Info_Popup_Header_Quit{
+    background: transparent;
+    border: 0;
+    font-size: larger;
+    text-align: right;
+}
