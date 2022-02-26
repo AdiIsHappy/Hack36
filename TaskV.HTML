@@ -13,8 +13,8 @@
 <body>
     <!-- Navigtation Buttons  -->
     <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
-    <button class="CalanderButton" id="Calender_Button">Calander</button>
-    <button class="AddTaskButton" id="Add_Task_Button">Add Task</button>
+    <button  class="CalanderButton" id="Calender_Button">Calander</button>
+    <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
 
     <!-- Info PopUp -->
     <div class="Info " id="info_Popup">
@@ -33,36 +33,40 @@
         </div>
     </div>
 
+    <!-- Add Task PopUp -->
+    <div class="AddTask" id="Add_Task_popup">
+        
+    </div>
     <!-- this overlay will be activated on any popup activation -->
     <div id="overlay"></div>
- 
+
     <!-- Main Body of page  -->
     <div class="Tasks" id="TaskViewr">
-        <div id=I_U >
+        <div id=I_U>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
-            <ul class = "TaksList" id = I_U_L>
+            <ul class="TaksList" id=I_U_L>
                 <!-- tasks will come from local storage -->
             </ul>
         </div>
-        <div id=I_NU >
+        <div id=I_NU>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
-            <ul class = "TaksList" id = I_NU_L>
+            <ul class="TaksList" id=I_NU_L>
                 <!-- tasks will come from local storage -->
             </ul>
         </div>
-        <div id=NI_U >
+        <div id=NI_U>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
-            <ul class = "TaksList" id = NI_U_L>
+            <ul class="TaksList" id=NI_U_L>
                 <!-- tasks will come from local storage -->
             </ul>
         </div>
-        <div id=NI_NU >
+        <div id=NI_NU>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
-            <ul class = "TaksList" id = NI_NU_L>
+            <ul class="TaksList" id=NI_NU_L>
                 <!-- tasks will come from local storage -->
             </ul>
         </div>
