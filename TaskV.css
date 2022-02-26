@@ -61,26 +61,7 @@ transform: translate(-50%,-50%) scale(1);
     text-align: justify;
 
 }
-.Infobutton{
-    position: absolute;
-    width: 200px;
-    height: 56px;
-    float: right;
-    top: 119px;
-    border: 0ch;
 
-    background: #7958ee;
-    border-radius: 180px 0px 0px 180px;
-    text-align: left ;
-    position: relative;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 56px;
-    padding-left: 30px;
-    text-decoration: white ;
-}
 #overlay {
     position: fixed;
     opacity: 0;
@@ -128,4 +109,123 @@ transform: translate(-50%,-50%) scale(1);
 .ShowDetialOfTask.active {
     display: block;
 }
+/*new*/
+.AddTaskButton{
+    
+    width: 200px;
+    height: 56px;
+    float: right;
+    top: 119px;
+    border: 0ch;
+
+    background: #7958ee;
+    border-radius: 180px 0px 0px 180px;
+    text-align: left ;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 56px;
+    padding-left: 30px;
+    
+}
+.CalanderButton{
+    /*position: absolute;*/
+    width: 200px;
+    height: 56px;
+    float: right;
+    top: 170px;
+    border: 0ch;
+
+    background: #7958ee;
+    border-radius: 180px 0px 0px 180px;
+    text-align: left ;
+    /*position: relative;*/
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 56px;
+    padding-left: 30px;
+    
+}
+
+
+    
+
+.Infobutton{
+    /*position: absolute;*/
+    width: 200px;
+    height: 56px;
+    float: right;
+    top: 119px;
+    border: 0ch;
+
+    background: #7958ee;
+    border-radius: 180px 0px 0px 180px;
+    text-align: left ;
+    /*position: relative;*/
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 56px;
+    padding-left: 30px;
+}
+main{
+    width: 100%;
+    height: 100%;
+    margin:0%;
+    display: grid;
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50%;
+    grid-template-columns: 40% 40% 20%;
+    
+
+}
+#I_U{
+    grid-row: 1/4;
+    height: 300px;
+    background-color: #7958ee;
+    padding: 10px;
+    border: 10px solid white;
+}
+#I_NU{
+    grid-column: 2;
+    grid-row: 1/4;
+    height: 300px;
+    background-color: #7958ee;
+    padding: 10px;
+    border: 10px solid white;
+
+}
+#NI_U{
+    grid-column: 2;
+    grid-row: 5;
+    height: 300px;
+    background-color: #7958ee;
+    padding: 10px;
+    border: 10px solid white;
+}
+#NI_NU{
+    grid-column: 1;
+    grid-row: 5;
+    height: 300px;
+    background-color: #7958ee;
+    padding: 10px;
+    border: 10px solid white;
+}
+.whatisthis{
+    grid-column: 3;
+    grid-row: 1;
+}
+.addtask{
+    grid-column: 3;
+    grid-row: 2;
+}
+.calendar{
+    grid-column: 3;
+    grid-row: 3;
+}
+
 
