@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,65 @@
     <script defer src="TaskV.js"></script>
     <title>Task</title>
 </head>
+
 <body>
-    <button  onclick = "openInfoPopup()" class="Infobutton" id="Info_Button">
-        What is This
-    </button>
-    <div class="Info " id = "info_Popup">
-        <div id="Header" id = "Info_Popup_Header">
-            <div class="Text", id = "Info_Popup_Header_Text" > INFO</div>
-            <button onclick = "closeInfoPopup()" class="Info_Popup_Header_Quit", id = "Info_Popup_Header_Close" >&times;</button>
+    <!-- Navigtation Buttons  -->
+    <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
+    <button class="CalanderButton" id="Calender_Button">Calander</button>
+    <button class="AddTaskButton" id="Add_Task_Button">Add Task</button>
+
+    <!-- Info PopUp -->
+    <div class="Info " id="info_Popup">
+        <div id="Header" id="Info_Popup_Header">
+            <div class="Text" , id="Info_Popup_Header_Text"> INFO</div>
+            <div><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit" ,
+                id="Info_Popup_Header_Close">&times;</button> </div>
         </div>
-        <div class="Content" id = "Info_Popup_Contnet">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga mollitia est ab dolorum nam aliquid corporis recusandae, deleniti provident, inventore fugit dignissimos laudantium repudiandae maxime ea, illum culpa ad delectus quasi earum quod laboriosam quisquam accusantium? Cum quisquam alias natus dolorum eveniet aut quam ab beatae perspiciatis, ipsa, dicta perferendis in accusantium, et reprehenderit fugit laboriosam error. Soluta dolorum atque magni dicta vero porro dolore libero voluptas blanditiis, dignissimos culpa doloremque voluptates sed! Possimus consequatur nobis esse, quidem odit facilis?
+        <div class="Content" id="Info_Popup_Contnet">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga mollitia est ab dolorum nam aliquid corporis
+            recusandae, deleniti provident, inventore fugit dignissimos laudantium repudiandae maxime ea, illum culpa ad
+            delectus quasi earum quod laboriosam quisquam accusantium? Cum quisquam alias natus dolorum eveniet aut quam
+            ab beatae perspiciatis, ipsa, dicta perferendis in accusantium, et reprehenderit fugit laboriosam error.
+            Soluta dolorum atque magni dicta vero porro dolore libero voluptas blanditiis, dignissimos culpa doloremque
+            voluptates sed! Possimus consequatur nobis esse, quidem odit facilis?
         </div>
     </div>
+
+    <!-- this overlay will be activated on any popup activation -->
     <div id="overlay"></div>
+ 
+    <!-- Main Body of page  -->
+    <div class="Tasks" id="TaskViewr">
+        <div id=I_U >
+            <h3>important and Urgent</h3>
+            <!-- This will show all the Tasks -->
+            <ul class = "TaksList" id = I_U_L>
+                <!-- tasks will come from local storage -->
+            </ul>
+        </div>
+        <div id=I_NU >
+            <h3>important and Urgent</h3>
+            <!-- This will show all the Tasks -->
+            <ul class = "TaksList" id = I_NU_L>
+                <!-- tasks will come from local storage -->
+            </ul>
+        </div>
+        <div id=NI_U >
+            <h3>important and Urgent</h3>
+            <!-- This will show all the Tasks -->
+            <ul class = "TaksList" id = NI_U_L>
+                <!-- tasks will come from local storage -->
+            </ul>
+        </div>
+        <div id=NI_NU >
+            <h3>important and Urgent</h3>
+            <!-- This will show all the Tasks -->
+            <ul class = "TaksList" id = NI_NU_L>
+                <!-- tasks will come from local storage -->
+            </ul>
+        </div>
+    </div>
 
 </body>
+
 </html>
