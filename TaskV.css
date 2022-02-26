@@ -15,6 +15,25 @@
 .Info.active {
 transform: translate(-50%,-50%) scale(1);
 }
+
+.AddTask{
+    position:absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+
+    background-color: rgb(198, 168, 247);
+    padding: 10px;
+    width: 1072px;
+    height: 479px;
+    z-index: 50;
+    border-radius: 30px;
+    transition: 200ms;
+}
+.AddTask.active {
+transform: translate(-50%,-50%) scale(1);
+}
+
 .Text{
     position: absolute;
     text-align:justify;
