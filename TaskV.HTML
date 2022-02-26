@@ -11,10 +11,7 @@
 </head>
 
 <body>
-    <!-- Navigtation Buttons  -->
-    <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
-    <button class="CalanderButton" id="Calender_Button">Calander</button>
-    <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
+    
 
     <!-- Info PopUp -->
     <div class="Info " id="info_Popup">
@@ -60,6 +57,16 @@
 
     <!-- Main Body of page  -->
     <div class="Tasks" id="TaskViewr">
+        <main>
+            <div class="whatisthis">
+            <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
+            </div>
+            <div class="calender">
+            <button  class="CalanderButton" id="Calender_Button">Calander</button>
+            </div>
+            <div class="addtask">
+            <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
+            </div>
         <div id=I_U>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
