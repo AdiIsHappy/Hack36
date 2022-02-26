@@ -13,15 +13,15 @@
 <body>
     <!-- Navigtation Buttons  -->
     <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
-    <button  class="CalanderButton" id="Calender_Button">Calander</button>
+    <button class="CalanderButton" id="Calender_Button">Calander</button>
     <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
 
     <!-- Info PopUp -->
     <div class="Info " id="info_Popup">
         <div id="Header" id="Info_Popup_Header">
             <div class="Text" , id="Info_Popup_Header_Text"> INFO</div>
-            <div id="Info_Popup_Header_Close"><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit" ,
-                >&times;</button> </div>
+            <div id="Info_Popup_Header_Close"><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit"
+                    ,>&times;</button> </div>
         </div>
         <div class="Content" id="Info_Popup_Contnet">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga mollitia est ab dolorum nam aliquid corporis
@@ -35,24 +35,25 @@
 
     <!-- Add Task PopUp -->
     <div class="AddTask" id="Add_Task_popup">
-        <input type="text" placeholder="Title" name = "Title" id = "title">
-        <button onclick="closeAddTaskPopup()" type="button" >&times;</button> <br>
-        <input type="radio" name = "type" id = 1> Uregent and important <br>
-        <input type="radio" name = "type" id = 2> not Urgent but important <br>
-        <input type="radio" name = "type" id = 3> urgent but not important  <br>
-        <input type="radio" name = "type" id = 4> neither urgent nor important <br>
+        <input type="text" placeholder="Title" name="Title" id="title">
+        <button onclick="closeAddTaskPopup()" type="button">&times;</button> <br>
+        <input type="radio" name="type" id=1> Uregent and important <br>
+        <input type="radio" name="type" id=2> not Urgent but important <br>
+        <input type="radio" name="type" id=3> urgent but not important <br>
+        <input type="radio" name="type" id=4> neither urgent nor important <br>
         <p>Add start Date and time </p>
-        <input type= "date" name="Start Date" id="StartDate">
-        <input type= "time" name="Start Date" id="StartDate">
+        <input type="date" name="Start Date" id="StartDate">
+        <input type="time" name="Start Date" id="StartTime">
         <p>add link if any </p>
         <input type="text" name="Link" id="Link" placeholder="add link if any">
         <p>Description</p>
-        <textarea name="Description" id="Description" cols="30" rows="10" placeholder = "desc..." style="resize: none;"></textarea><br>
-        <button onclick="AddToTask()" type="button" id = "AddToTask">Add to task</button>
-        <button onclick="reset()" type="button" id = Reset>Reset</button>
+        <textarea name="Description" id="Description" cols="30" rows="10" placeholder="desc..."
+            style="resize: none;"></textarea><br>
+        <button type="button" id="AddToTask">Add to task</button>
+        <button type="button" id="Reset">Reset</button>
 
     </div>
-        
+
     </div>
     <!-- this overlay will be activated on any popup activation -->
     <div id="overlay"></div>
@@ -62,32 +63,33 @@
         <div id=I_U>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
-            <ul class="TaksList" id=I_U_L>
-                <!-- tasks will come from local storage -->
-            </ul>
-        </div>
-        <div id=I_NU>
-            <h3>important and Urgent</h3>
-            <!-- This will show all the Tasks -->
-            <ul class="TaksList" id=I_NU_L>
+            <ul class="TaksList" id="I_U_L">
                 <!-- tasks will come from local storage -->
             </ul>
         </div>
         <div id=NI_U>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
-            <ul class="TaksList" id=NI_U_L>
+            <ul class="TaksList" id="NI_U_L">
+                <!-- tasks will come from local storage -->
+            </ul>
+        </div>
+        <div id=I_NU>
+            <h3>important and Urgent</h3>
+            <!-- This will show all the Tasks -->
+            <ul class="TaksList" id="I_NU_L">
                 <!-- tasks will come from local storage -->
             </ul>
         </div>
         <div id=NI_NU>
             <h3>important and Urgent</h3>
             <!-- This will show all the Tasks -->
-            <ul class="TaksList" id=NI_NU_L>
+            <ul class="TaksList" id="NI_NU_L">
                 <!-- tasks will come from local storage -->
             </ul>
         </div>
     </div>
+
 
 </body>
 
