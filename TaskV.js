@@ -1,4 +1,5 @@
 const infoPopup = document.getElementById("info_Popup")
+const addTaskPopup = document.getElementById("Add_Task_popup")
 const overlay = document.getElementById("overlay")
 const taskLists = document.getElementsByClassName("TaksList")
 
@@ -11,6 +12,19 @@ function openInfoPopup() {
 function closeInfoPopup() {
     infoPopup.classList.remove("active")
     overlay.classList.remove("active")
+}
+function openAddTaskPopup() {
+    addTaskPopup.classList.add("active")
+    overlay.classList.add("active")
+}
+function closeAddTaskPopup() {
+    addTaskPopup.classList.remove("active")
+    overlay.classList.remove("active")
+}
+
+overlay.onclick = ()  => {
+    closeAddTaskPopup()
+    closeInfoPopup()
 }
 
 function showTasks() {
