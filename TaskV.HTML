@@ -35,6 +35,21 @@
 
     <!-- Add Task PopUp -->
     <div class="AddTask" id="Add_Task_popup">
+        <input type="text" placeholder="Title" name = "Title" id = "title">
+        <button onclick="closeAddTaskPopup()" type="button" >&times;</button> <br>
+        <input type="radio" name = "type" id = 1> Uregent and important <br>
+        <input type="radio" name = "type" id = 2> not Urgent but important <br>
+        <input type="radio" name = "type" id = 3> urgent but not important  <br>
+        <input type="radio" name = "type" id = 4> neither urgent nor important <br>
+        <p>Add start Date and time </p>
+        <input type= "date" name="Start Date" id="StartDate">
+        <input type= "time" name="Start Date" id="StartDate">
+        <p>add link if any </p>
+        <input type="text" name="Link" id="Link" placeholder="add link if any">
+        <p>Description</p>
+        <textarea name="Description" id="Description" cols="30" rows="10" placeholder = "desc..." style="resize: none;"></textarea>
+
+    </div>
         
     </div>
     <!-- this overlay will be activated on any popup activation -->
