@@ -2,6 +2,7 @@ const infoPopup = document.getElementById("info_Popup")
 const addTaskPopup = document.getElementById("Add_Task_popup")
 const overlay = document.getElementById("overlay")
 const taskLists = document.getElementsByClassName("TaksList")
+let previouslyOpened = null;
 
 // thses all are inputs from add task form 
 const Title = document.getElementById("title")
@@ -120,8 +121,12 @@ function showTasks() {
     }
 }
 
-function showDetails(element){
+function showDetails(element) {
+    if (previouslyOpened != null) {
+        previouslyOpened.classList.remove("active")
+    }
     element.parentElement.lastElementChild.classList.add("active")
+    previouslyOpened =  element.parentElement.lastElementChild
 }
 
 
