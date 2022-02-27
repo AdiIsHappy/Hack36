@@ -1,9 +1,8 @@
-.Info{
-    position:absolute;
-    top : 50%;
+.Info {
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(0);
-
+    transform: translate(-50%, -50%) scale(0);
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 1072px;
@@ -13,23 +12,22 @@
     transition: 200ms;
     overflow: scroll;
 }
-.Info.active {
-transform: translate(-50%,-50%) scale(1);
-}
 
+.Info.active {
+    transform: translate(-50%, -50%) scale(1);
+}
 
 .AddTask.active {
-transform: translate(-50%,-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.Text{
+.Text {
     position: absolute;
-    text-align:justify;
+    text-align: justify;
     width: 174px;
     height: 75px;
     left: 45%;
     top: 26px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -37,19 +35,18 @@ transform: translate(-50%,-50%) scale(1);
     line-height: 56px;
     color: #FF9F45;
 }
-.Content{
+
+.Content {
     position: relative;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 28px;
     line-height: 56px;
-
     height: 400px;
     top: 12%;
     text-align: justify;
     color: #FF9F45;
-
 }
 
 #overlay {
@@ -60,22 +57,25 @@ transform: translate(-50%,-50%) scale(1);
     right: 0;
     bottom: 0;
     transition: 200ms;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     pointer-events: none;
     z-index: 49;
 }
-#overlay.active{
+
+#overlay.active {
     opacity: 1;
     pointer-events: all;
 }
-#Info_Popup_Header_Close{
+
+#Info_Popup_Header_Close {
     background: transparent;
     border: 0;
     font-size: larger;
     text-align: right;
     left: 1266px;
 }
-.Info_Popup_Header_Quit{
+
+.Info_Popup_Header_Quit {
     background: transparent;
     border: 0;
     font-size: larger;
@@ -86,51 +86,49 @@ transform: translate(-50%,-50%) scale(1);
     transform: scale(0);
 }
 
-.taskPreviewBlock  ul  div :hover .taskPreview{
+.taskPreviewBlock ul div :hover .taskPreview {
     transform: scale(1);
 }
 
-.ShowDetialOfTask  {
+.ShowDetialOfTask {
     background-color: aquamarine;
     display: none;
-
 }
 
 .ShowDetialOfTask.active {
     display: block;
 }
+
+
 /*new*/
-.AddTaskButton{
-    
+
+.AddTaskButton {
     width: 200px;
     height: 56px;
     float: right;
     top: 119px;
     border: 0ch;
-
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
-    text-align: left ;
-    
+    text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: bolder;
     font-size: 20px;
     line-height: 56px;
     padding-left: 30px;
-    
 }
-.CalanderButton{
+
+.CalanderButton {
     /*position: absolute;*/
     width: 200px;
     height: 56px;
     float: right;
     top: 170px;
     border: 0ch;
-
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
-    text-align: left ;
+    text-align: left;
     /*position: relative;*/
     font-family: Roboto;
     font-style: normal;
@@ -138,23 +136,18 @@ transform: translate(-50%,-50%) scale(1);
     font-size: 20px;
     line-height: 56px;
     padding-left: 30px;
-    
 }
 
-
-    
-
-.Infobutton{
+.Infobutton {
     /*position: absolute;*/
     width: 200px;
     height: 56px;
     float: right;
     top: 119px;
     border: 0ch;
-
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
-    text-align: left ;
+    text-align: left;
     /*position: relative;*/
     font-family: Roboto;
     font-style: normal;
@@ -163,33 +156,34 @@ transform: translate(-50%,-50%) scale(1);
     line-height: 56px;
     padding-left: 30px;
 }
-main{
+
+main {
     width: 100%;
     height: 100%;
-    margin:0%;
+    margin: 0%;
     display: grid;
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50%;
     grid-template-columns: 40% 40% 20%;
-    
-
 }
-#I_U{
+
+#I_U {
     grid-row: 1/4;
     height: 300px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
 }
-#I_NU{
+
+#I_NU {
     grid-column: 2;
     grid-row: 1/4;
     height: 300px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
-
 }
-#NI_U{
+
+#NI_U {
     grid-column: 2;
     grid-row: 5;
     height: 300px;
@@ -197,7 +191,8 @@ main{
     padding: 10px;
     border: 10px solid white;
 }
-#NI_NU{
+
+#NI_NU {
     grid-column: 1;
     grid-row: 5;
     height: 300px;
@@ -205,24 +200,27 @@ main{
     padding: 10px;
     border: 10px solid white;
 }
-.whatisthis{
+
+.whatisthis {
     grid-column: 3;
     grid-row: 1;
 }
-.addtask{
+
+.addtask {
     grid-column: 3;
     grid-row: 2;
 }
-.calendar{
+
+.calendar {
     grid-column: 3;
     grid-row: 3;
 }
-.AddTask{
-    position:absolute;
-    top : 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0);
 
+.AddTask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 1072px;
@@ -231,11 +229,13 @@ main{
     border-radius: 30px;
     transition: 200ms;
     overflow: scroll;
+    border: solid 2px #FF9F45;
 }
-#title{
+
+#title {
     font-size: 32px;
-    border:0px;
-    border-bottom: solid 2px #FF9F45 ;
+    border: 0px;
+    border-bottom: solid 2px #FF9F45;
     background-color: transparent;
     font-family: Roboto;
     font-style: normal;
@@ -245,20 +245,24 @@ main{
     margin-left: 15%;
     margin-right: 15%;
     color: #FF9F45;
-    width:60%;
+    width: 60%;
     padding-top: 30px;
-
 }
-::placeholder{
+
+::placeholder {
     color: #FF9F45;
 }
-.r_1,.r_2,.r_3,.r_4{
-    margin-left: 15%;
+
+.r_1,
+.r_2,
+.r_3,
+.r_4 {
+    margin-left: 20%;
     color: #FF9F45;
     font-size: 13px;
     padding: 20px;
-
 }
+
 input[type='radio']:after {
     width: 15px;
     height: 15px;
@@ -286,7 +290,8 @@ input[type='radio']:checked:after {
     visibility: visible;
     border: 2px solid white;
 }
-.AddTask p{
+
+.AddTask p {
     margin: 0px;
     margin-left: 15%;
     color: #FF9F45;
@@ -294,10 +299,10 @@ input[type='radio']:checked:after {
     font-style: normal;
     font-weight: bolder;
     font-size: 20px;
-    
-
 }
-#StartDate,#StartTime{
+
+#StartDate,
+#StartTime {
     border-radius: 10px;
     border: solid 2px #FF9F45;
     color: #FF9F45;
@@ -306,21 +311,12 @@ input[type='radio']:checked:after {
     font-weight: bolder;
     font-size: 20px;
     padding: 10px;
-
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    color: #FF9F45;
-    opacity: 0;
-    /* display: block; */
-    /* background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat; */
-    /* width: 20px; */
-    /* height: 20px; */
-    /* border-width: thin; */
-}
-input[type="time"]::-webkit-calendar-picker-indicator { background: none; display:none; }
-
-#Link,#Description{
+#Link,
+#Description {
     margin-left: 15%;
     font-size: 20px;
     width: 60%;
@@ -330,24 +326,38 @@ input[type="time"]::-webkit-calendar-picker-indicator { background: none; displa
     font-weight: bolder;
     font-size: 20px;
     padding: 10px;
-
 }
-#Description,#Link{
+
+#Description,
+#Link {
     border: solid 2px #FF9F45;
     border-radius: 10px;
     margin-top: 10px;
 }
-#AddToTask,#Reset{
+
+.AddToTask,
+.Reset {
     border: 0px;
-    background-color: #FF9F45;
+    background-color: #ffbe81;
     border-radius: 5px;
     padding: 10px;
-    margin-top: 30px;
+    margin-top: 30px
 }
-#AddToTask{
+
+.Reset {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 40px;
+    color: white;
+}
+
+.AddToTask {
     margin-left: 15%;
+    color: white;
+    color: white;
 }
-.closekro{
+
+.closekro {
     background: transparent;
     border: 0;
     color: #FF9F45;
@@ -355,23 +365,28 @@ input[type="time"]::-webkit-calendar-picker-indicator { background: none; displa
     z-index: 50;
     float: right;
 }
+
+
 /* responsiveness */
-@media screen and (max-width : 1130px) {
-    .Info,.AddTask{
+
+@media screen and (max-width: 1130px) {
+    .Info,
+    .AddTask {
         width: 370px;
     }
-    .Text{
+    .Text {
         left: 40%;
         position: absolute;
-
     }
 }
-.TaksList{
+
+.TaksList {
     overflow: scroll;
     height: 200px;
 }
+
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background: transparent;
 }
@@ -384,13 +399,18 @@ input[type="time"]::-webkit-calendar-picker-indicator { background: none; displa
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background: transparent;
 }
-::-webkit-scrollbar-corner{
+
+::-webkit-scrollbar-corner {
     background: transparent;
 }
 
 .AddToTask.active {
+    background-color: #FF9F45;
+}
+
+.Reset.active {
     background-color: #FF9F45;
 }
