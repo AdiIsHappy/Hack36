@@ -3,7 +3,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-
     background-color: rgb(198, 168, 247);
     padding: 10px;
     width: 1072px;
@@ -17,7 +16,6 @@
     transform: translate(-50%, -50%) scale(1);
 }
 
-
 .AddTask.active {
     transform: translate(-50%, -50%) scale(1);
 }
@@ -29,7 +27,6 @@
     height: 75px;
     left: 45%;
     top: 26px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -44,11 +41,9 @@
     font-weight: normal;
     font-size: 28px;
     line-height: 56px;
-
     height: 400px;
     top: 12%;
     text-align: justify;
-
 }
 
 #overlay {
@@ -95,33 +90,30 @@
 .ShowDetialOfTask {
     background-color: aquamarine;
     display: none;
-
 }
 
 .ShowDetialOfTask.active {
     display: block;
 }
 
-/*new*/
-.AddTaskButton {
 
+/*new*/
+
+.AddTaskButton {
     width: 200px;
     height: 56px;
     float: right;
     top: 119px;
     border: 0ch;
-
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
     text-align: left;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 56px;
     padding-left: 30px;
-
 }
 
 .CalanderButton {
@@ -131,7 +123,6 @@
     float: right;
     top: 170px;
     border: 0ch;
-
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
     text-align: left;
@@ -142,11 +133,7 @@
     font-size: 20px;
     line-height: 56px;
     padding-left: 30px;
-
 }
-
-
-
 
 .Infobutton {
     /*position: absolute;*/
@@ -155,7 +142,6 @@
     float: right;
     top: 119px;
     border: 0ch;
-
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
     text-align: left;
@@ -175,8 +161,6 @@ main {
     display: grid;
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50%;
     grid-template-columns: 40% 40% 20%;
-
-
 }
 
 #I_U {
@@ -194,7 +178,6 @@ main {
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
-
 }
 
 #NI_U {
@@ -235,7 +218,6 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 1072px;
@@ -274,7 +256,6 @@ main {
     color: #FF9F45;
     font-size: 13px;
     padding: 20px;
-
 }
 
 input[type='radio']:after {
@@ -313,7 +294,6 @@ input[type='radio']:checked:after {
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-
 }
 
 #StartDate,
@@ -326,7 +306,6 @@ input[type='radio']:checked:after {
     font-weight: normal;
     font-size: 20px;
     margin-left: 15%;
-
 }
 
 #StartTime {
@@ -357,20 +336,27 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 60%;
 }
 
-#AddToTask,
-#Reset {
+.AddToTask,
+.Reset {
     border: 0px;
-    background-color: #FF9F45;
+    background-color: #fbaf68;
     border-radius: 5px;
     padding: 10px;
     margin-top: 30px;
     font-size: 24px;
     color: white;
-
 }
 
-#AddToTask {
+.AddToTask {
     margin-left: 15%;
+}
+
+.addtask.active {
+    background-color: #FF9F45;
+}
+
+.Reset.active {
+    background-color: #FF9F45;
 }
 
 .closekro {
@@ -380,7 +366,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 25px;
 }
 
-#Reset {
+.Reset {
     margin-left: 10%;
     padding-left: 30px;
     padding-right: 30px;
