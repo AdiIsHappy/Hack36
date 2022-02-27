@@ -39,6 +39,8 @@ const reset = document.getElementById("Reset")
 const addBtn = document.getElementById("AddToTask")
 const clearAllButton = document.getElementById("Calender_Button")
 
+addBtn.onclick = () => {}
+reset.onclick = () => {}
 
 showTasks()
 
@@ -58,30 +60,32 @@ function openAddTaskPopup() {
 }
 
 function closeAddTaskPopup() {
+    resetInputs()
+    ValueChanged()
     addTaskPopup.classList.remove("active")
     overlay.classList.remove("active")
 }
 
 function resetInputs() {
     Title.value = ""
-    R1.value = ""
-    R2.value = ""
-    R3.value = ""
-    R4.value = ""
+    R1.checked = false
+    R2.checked = false
+    R3.checked = false
+    R4.checked = false
     Sdate.value = ""
     Stime.value = ""
     Link.value = ""
     desc.value = ""
+    ValueChanged()
 }
-
-reset.onclick = resetInputs()
 
 overlay.onclick = () => {
     closeAddTaskPopup()
     closeInfoPopup()
 }
 
-addBtn.onclick = () => {
+
+function addButtonFunc() {
 
     if (R1.checked) {
         typo = 1
@@ -99,7 +103,6 @@ addBtn.onclick = () => {
         alert("Please select type of Task")
         return;
     }
-    console.log(Title.value);
 
     let getLocalStorageData = localStorage.getItem(Storagename);
     if (getLocalStorageData == null) { //if localstorage has no data
@@ -149,7 +152,6 @@ function showTasks() {
                 added = 1
                 var today = new Date()
                 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-                console.log(date);
                 newLiTag += `<li>deadline : ${date} ${element.startTime}</li>`
             } else if (element.startDate != "" && element.startTime == "") {
                 added = 1
@@ -194,7 +196,6 @@ function deleteTask(element) {
     for (let i = deleteIndex; i < listArray.length; i++) {
         listArray[i].id -= 1
     }
-    console.log(deleteIndex - 1);
     localStorage.setItem(deleteStorageName, JSON.stringify(listArray));
     showTasks()
 
@@ -203,4 +204,22 @@ function deleteTask(element) {
 clearAllButton.onclick = () => {
     localStorage.clear()
     showTasks()
+}
+
+function ValueChanged() {
+    if (Title.value.length != 0 && (R1.checked || R2.checked || R3.checked || R4.checked)) {
+        addBtn.onclick = addButtonFunc
+        addBtn.classList.add("active")
+
+    } else {
+        addBtn.onclick = () => {}
+        addBtn.classList.remove("active")
+    }
+    if (Title.value.length != 0 || R1.checked || R2.vchecked || R3.checked || R4.checked || Sdate.value.length != 0 || Stime.value.length != 0 || Link.value.length != 0 || desc.value.length != 0) {
+        reset.classList.add("active")
+        reset.onclick = resetInputs
+    } else {
+        reset.classList.remove("active")
+        reset.onclick = () => {}
+    }
 }
