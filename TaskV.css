@@ -1,17 +1,23 @@
 .Info {
-    position: absolute;
+    position: Fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     background-color: rgb(255, 255, 255);
     padding: 10px;
-    width: 1072px;
-    height: 600px;
+    width: 56%;
+    height: 88%;
     z-index: 50;
     border-radius: 30px;
     transition: 200ms;
     overflow: scroll;
 }
+
+
+/* 
+#InfoImage {
+    position: relative;
+} */
 
 .Info.active {
     transform: translate(-50%, -50%) scale(1);
@@ -91,12 +97,6 @@
 }
 
 
-
-.ShowDetialOfTask.active {
-    display: block;
-}
-
-
 /*new*/
 
 .AddTaskButton {
@@ -156,18 +156,17 @@
 
 main {
     width: 100%;
-    height: 1080px;
+    height: 900px;
     margin: 0%;
     display: grid;
-    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50% ;  
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50%;
     /* new  */
     grid-template-columns: 40% 40% 20%;
-   
 }
 
 #I_U {
     grid-row: 1/4;
-    height: 450px;
+    height: 400px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
@@ -176,7 +175,7 @@ main {
 #I_NU {
     grid-column: 2;
     grid-row: 1/4;
-    height: 450px;
+    height: 400px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
@@ -185,17 +184,16 @@ main {
 #NI_U {
     grid-column: 1;
     grid-row: 5;
-    height: 450px;
+    height: 400px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
-    
 }
 
 #NI_NU {
     grid-column: 2;
     grid-row: 5;
-    height: 450px;
+    height: 400px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
@@ -214,22 +212,6 @@ main {
 .calendar {
     grid-column: 3;
     grid-row: 3;
-}
-
-.AddTask {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    width: 1072px;
-    height: 600px;
-    z-index: 50;
-    border-radius: 30px;
-    transition: 200ms;
-    overflow: scroll;
-    border: solid 2px #FF9F45;
 }
 
 #title {
@@ -390,7 +372,10 @@ input[type='radio']:checked:after {
     border-radius: 10px;
     background: transparent;
 }
+
+
 /* new */
+
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
@@ -414,18 +399,42 @@ input[type='radio']:checked:after {
 .Reset.active {
     background-color: #FF9F45;
 }
+
+.AddTask {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 60%;
+    height: 60%;
+    z-index: 50;
+    border-radius: 5%;
+    transition: 200ms;
+    overflow: scroll;
+    border: solid 2px #FF9F45;
+}
+
+
 /*new*/
-body{
+
+body {
     background-color: #FFE2C9;
 }
-#I_U,#NI_NU,#I_NU,#NI_U{
+
+#I_U,
+#NI_NU,
+#I_NU,
+#NI_U {
     margin: 10px;
     margin-left: 15px;
     border: 7px solid #FFBC80;
     border-radius: 15px;
     background: transparent;
 }
-#RandomQuotes{
+
+#RandomQuotes {
     grid-row: 6;
     grid-column: 3;
     grid-row: 5;
@@ -438,10 +447,11 @@ body{
     color: #FC4F4F;
     margin: 0;
 }
-h3{
+
+h3 {
     box-sizing: border-box;
     background-color: #FF9F45;
-    border-radius: 15px; 
+    border-radius: 15px;
     margin: 0;
     text-align: center;
     width: 80%;
@@ -455,11 +465,14 @@ h3{
     padding-top: 15px;
     color: #FFFFFF;
 }
-.whatisthis,.calender,.addtask{
+
+.whatisthis,
+.calender,
+.addtask {
     color: #F76E11;
 }
 
-ul li{
+ul li {
     background-color: white;
     font-family: Roboto;
     font-style: normal;
@@ -470,16 +483,18 @@ ul li{
     border: solid 2px #FFE2C9;
     border-radius: 5px;
     height: 30px;
-    display:grid;
+    display: grid;
     grid-template-columns: 95% 5%;
     grid-template-rows: 100%;
 }
-ul{
+
+ul {
     padding-left: 0;
 }
-.MarkDone{
+
+.MarkDone {
     grid-column: 2;
-    background-image:url(rect312250.png) ;
+    background-image: url(rect312250.png);
     background-size: cover;
     float: right;
     background-color: greenyellow;
@@ -489,77 +504,107 @@ ul{
     height: 100%;
     opacity: 1;
 }
-.TaskTitle{
-    grid-column: 1;
 
+.TaskTitle {
+    grid-column: 1;
     border: 0;
     opacity: 1;
     background-color: white;
-
 }
 
-.TaskTitle:hover{
+.TaskTitle:hover {
     grid-column: 1;
     background-color: #d1d3d1;
     border: 0;
     opacity: 1;
+}
 
-}
-.ShowDetialOfTask{
-    display: none;
+.ShowDetialOfTask {
+    transform: scale(0);
+    transition: 200ms;
     padding-left: 10px;
-}
-.ShowDetialOfTask.active li{
-    border: 0;
-    font-size: 14px;
     z-index: 20;
 }
+
+.ShowDetialOfTask.active {
+    display: block;
+    transform: scale(1);
+}
+
+.ShowDetialOfTask li {
+    background-color: #d1d3d1;
+}
+
+.ShowDetialOfTask.active li {
+    border: 0;
+    font-size: 14px;
+    /* background-color: #d1d3d1; */
+    border-radius: 0px;
+}
+
 @media screen and (max-width: 1152px) {
-    main{
+    main {
         display: grid;
-        grid-template-rows: 450px 450px 450px 450px 60px 60px 60px 100px ;
+        grid-template-rows: 450px 450px 450px 450px 60px 60px 60px 100px;
         grid-template-columns: 100%;
     }
-    #I_U{
+    #I_U {
         grid-row: 1;
         grid-column: 1;
         height: 350px;
     }
-    #I_NU{
+    #I_NU {
         grid-row: 2;
         grid-column: 1;
         height: 350px;
     }
-    #NI_U{
+    #NI_U {
         grid-row: 3;
         grid-column: 1;
         height: 350px;
     }
-    #NI_NU{
+    #NI_NU {
         grid-row: 4;
         grid-column: 1;
         height: 350px;
     }
-    .whatisthis{
+    .whatisthis {
         grid-row: 5;
         grid-column: 1;
-        width:100%;
+        width: 100%;
     }
-    .addtask{
+    .addtask {
         grid-row: 6;
         grid-column: 1;
-        width:100%;
+        width: 100%;
     }
-    #calender{
+    #calender {
         grid-row: 7;
         grid-column: 1;
-        width:100%;
+        width: 100%;
     }
-    #RandomQuotes{
+    #RandomQuotes {
         grid-row: 8;
         grid-column: 1;
     }
-    .Infobutton,.AddTaskButton,.CalanderButton{
+    .Infobutton,
+    .AddTaskButton,
+    .CalanderButton {
         width: 100%;
+    }
+    .AddTask {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        width: 80%;
+        height: 80%;
+        z-index: 50;
+        border-radius: 5%;
+        transition: 200ms;
+        overflow: scroll;
+        border: solid 2px #FF9F45;
     }
 }
