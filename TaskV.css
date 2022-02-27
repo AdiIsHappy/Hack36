@@ -108,7 +108,7 @@
     float: right;
     top: 119px;
     border: 0ch;
-    background: #7958ee;
+    background: #F76E1;
     border-radius: 180px 0px 0px 180px;
     text-align: left;
     font-family: Roboto;
@@ -126,7 +126,7 @@
     float: right;
     top: 170px;
     border: 0ch;
-    background: #7958ee;
+    background: #F76E1;
     border-radius: 180px 0px 0px 180px;
     text-align: left;
     /*position: relative;*/
@@ -145,7 +145,7 @@
     float: right;
     top: 119px;
     border: 0ch;
-    background: #7958ee;
+    background: #F76E1;
     border-radius: 180px 0px 0px 180px;
     text-align: left;
     /*position: relative;*/
@@ -162,7 +162,8 @@ main {
     height: 100%;
     margin: 0%;
     display: grid;
-    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50%;
+    grid-template-rows: 12% 12% 12% 12% 48% 4%;  
+    /* new  */
     grid-template-columns: 40% 40% 20%;
 }
 
@@ -203,17 +204,17 @@ main {
 
 .whatisthis {
     grid-column: 3;
-    grid-row: 1;
+    grid-row: 2;
 }
 
 .addtask {
     grid-column: 3;
-    grid-row: 2;
+    grid-row: 3;
 }
 
 .calendar {
     grid-column: 3;
-    grid-row: 3;
+    grid-row: 4;
 }
 
 .AddTask {
@@ -413,4 +414,94 @@ input[type='radio']:checked:after {
 
 .Reset.active {
     background-color: #FF9F45;
+}
+/*new*/
+body{
+    background-color: #FFE2C9;
+}
+#I_U,#NI_NU,#I_NU,#NI_U{
+    margin: 10px;
+    margin-left: 15px;
+    border: 7px solid #FFBC80;
+    border-radius: 15px;
+    background: transparent;
+}
+#RandomQuotes{
+    grid-row: 6;
+    grid-column: 1/-1;
+}
+h3{
+    box-sizing: border-box;
+    background-color: #FF9F45;
+    border-radius: 15px; 
+    margin: 0;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    height: 60px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top: 15px;
+    color: #FFFFFF;
+}
+.whatisthis,.calender,.addtask{
+    color: #F76E11;
+}
+
+ul li{
+    background-color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 0;
+    border: solid 2px #FFE2C9;
+    border-radius: 5px;
+    height: 30px;
+    display:grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 100%;
+}
+ul{
+    padding-left: 0;
+}
+.MarkDone{
+    grid-column: 2;
+
+    float: right;
+    background-color: greenyellow;
+    color: white;
+    border: 0;
+    margin: 0;
+    height: 100%;
+    opacity: 0;
+}
+.TaskTitle{
+    grid-column: 1;
+
+    border: 0;
+    opacity: 1;
+
+}
+.MarkDone:hover{
+    grid-column: 2;
+ 
+    float: right;
+    background-color: greenyellow;
+    color: white;
+    border: 0;
+    margin: 0;
+    height: 100%;
+    opacity: 1;
+}
+.TaskTitle:hover{
+    grid-column: 1;
+
+    border: 0;
+    opacity: 1;
+
 }
