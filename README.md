@@ -7,3 +7,9 @@ folder should contain following files
 
 now run TaskV.HTML 
 and website should load
+
+Here is a small video explantion for you 
+
+https://youtu.be/rNdXEeU4tjA
+
+
