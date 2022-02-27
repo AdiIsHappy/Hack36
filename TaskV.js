@@ -184,8 +184,9 @@ function showDetails(element) {
 }
 
 function deleteTask(element) {
-    const deleteStorageName = element.classList[0]
-    const deleteIndex = element.classList[1]
+
+    const deleteStorageName = element.classList[1]
+    const deleteIndex = element.classList[2]
     let getLocalStorageData = localStorage.getItem(deleteStorageName);
     if (getLocalStorageData == null) {
         return
