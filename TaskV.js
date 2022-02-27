@@ -179,8 +179,13 @@ function showDetails(element) {
     if (previouslyOpened != null) {
         previouslyOpened.classList.remove("active")
     }
-    element.parentElement.lastElementChild.classList.add("active")
-    previouslyOpened = element.parentElement.lastElementChild
+    if (previouslyOpened == element.parentElement.lastElementChild) {
+        previouslyOpened.classList.remove("active")
+        previouslyOpened = null;
+    } else {
+        element.parentElement.lastElementChild.classList.add("active")
+        previouslyOpened = element.parentElement.lastElementChild
+    }
 }
 
 function deleteTask(element) {
