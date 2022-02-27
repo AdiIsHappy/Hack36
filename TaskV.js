@@ -141,7 +141,7 @@ function showTasks() {
             var added = 0;
             newLiTag += `<li>
             <button onclick="showDetails(this)" class = "TaskTitle">${element.title}</button>
-            <button onclick = "deleteTask(this)", class = "MarkDone ${element.storageName} ${element.id}"S>done</button>
+            <button onclick = "deleteTask(this)", class = "MarkDone ${element.storageName} ${element.id}"S></button>
             <ul class = "ShowDetialOfTask">`
 
             if (element.startDate != "" && element.startTime != "") {
@@ -184,7 +184,6 @@ function showDetails(element) {
 }
 
 function deleteTask(element) {
-
     const deleteStorageName = element.classList[1]
     const deleteIndex = element.classList[2]
     let getLocalStorageData = localStorage.getItem(deleteStorageName);
