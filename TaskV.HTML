@@ -11,22 +11,18 @@
 </head>
 
 <body>
-    
+
 
     <!-- Info PopUp -->
     <div class="Info " id="info_Popup">
         <div id="Header" id="Info_Popup_Header">
             <div class="Text" , id="Info_Popup_Header_Text"> INFO</div>
-            <div id="Info_Popup_Header_Close"><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit"
-                    ,>&times;</button> </div>
+            <div id="Info_Popup_Header_Close"><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit" ,>&times;</button> </div>
         </div>
         <div class="Content" id="Info_Popup_Contnet">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga mollitia est ab dolorum nam aliquid corporis
-            recusandae, deleniti provident, inventore fugit dignissimos laudantium repudiandae maxime ea, illum culpa ad
-            delectus quasi earum quod laboriosam quisquam accusantium? Cum quisquam alias natus dolorum eveniet aut quam
-            ab beatae perspiciatis, ipsa, dicta perferendis in accusantium, et reprehenderit fugit laboriosam error.
-            Soluta dolorum atque magni dicta vero porro dolore libero voluptas blanditiis, dignissimos culpa doloremque
-            voluptates sed! Possimus consequatur nobis esse, quidem odit facilis?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga mollitia est ab dolorum nam aliquid corporis recusandae, deleniti provident, inventore fugit dignissimos laudantium repudiandae maxime ea, illum culpa ad delectus quasi earum quod laboriosam
+            quisquam accusantium? Cum quisquam alias natus dolorum eveniet aut quam ab beatae perspiciatis, ipsa, dicta perferendis in accusantium, et reprehenderit fugit laboriosam error. Soluta dolorum atque magni dicta vero porro dolore libero voluptas
+            blanditiis, dignissimos culpa doloremque voluptates sed! Possimus consequatur nobis esse, quidem odit facilis?
         </div>
     </div>
 
@@ -34,17 +30,19 @@
     <div class="AddTask" id="Add_Task_popup">
         <input type="text" placeholder="Add Task" name="Title" id="title">
         <button onclick="closeAddTaskPopup()" type="button" class="closekro">&times;</button> <br>
-        
-        <p>Due Date & Time </p><hr color="#FF9F45" width="60%" style="margin-left: 15%; height: 0.5px;" >
+
+        <p>Due Date & Time </p>
+        <hr color="#FF9F45" width="60%" style="margin-left: 15%; height: 0.5px;">
         <input type="date" name="Start Date" id="StartDate">
         <input type="time" name="Start Date" id="StartTime"><br>
         <input type="text" name="Link" id="Link" placeholder="Link"><br>
-        <textarea name="Description" id="Description" cols="30" rows="5" placeholder="desc..."
-        style="resize: none;"></textarea><br>
-        <input type="radio" name="type" class="r_1" id=1><label style=" color: #FF9F45;padding: 7px;font-size: 20px;"> Uregent | Important</label> <br>
-        <input type="radio" name="type" class="r_2"id=2><label style=" color: #FF9F45;padding: 7px;font-size: 20px;"> Not-Urgent | Important</label> <br>
-        <input type="radio" name="type" class="r_3" id=3> <label style=" color: rgb(255, 159, 69); padding: 7px;font-size: 20px;">Urgent | Important </label><br>
-        <input type="radio" name="type" class="r_4"id=4> <label style=" color: #FF9F45;padding: 7px;font-size: 20px;">Not-Urgent | Not-Important</label> <br>
+        <textarea name="Description" id="Description" cols="30" rows="5" placeholder="desc..." style="resize: none;"></textarea><br>
+        <input type="radio" name="type" class="r_1" id=1><label style=" color: #FF9F45;padding: 7px;font-size: 20px;">
+            Uregent | Important</label> <br>
+        <input type="radio" name="type" class="r_2" id=2><label style=" color: #FF9F45;padding: 7px;font-size: 20px;">
+            Not-Urgent | Important</label> <br>
+        <input type="radio" name="type" class="r_3" id=3> <label style=" color: rgb(255, 159, 69); padding: 7px;font-size: 20px;">Urgent | Not-Important </label><br>
+        <input type="radio" name="type" class="r_4" id=4> <label style=" color: #FF9F45;padding: 7px;font-size: 20px;">Not-Urgent | Not-Important</label> <br>
 
         <button type="button" id="AddToTask">Add to task</button>
         <button type="button" id="Reset">Reset</button>
@@ -60,44 +58,44 @@
     <div class="Tasks" id="TaskViewr">
         <main>
             <div class="whatisthis">
-            <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
+                <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
             </div>
             <div class="calender">
-            <button  class="CalanderButton" id="Calender_Button">Clear Tasks</button>
+                <button class="CalanderButton" id="Calender_Button">Clear Tasks</button>
             </div>
             <div class="addtask">
-            <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
+                <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
             </div>
-        <div id=I_U>
-            <h3>important and Urgent</h3>
-            <!-- This will show all the Tasks -->
-            <ul class="TaksList" id="I_U_L">
-                <!-- tasks will come from local storage -->
-            </ul>
-        </div>
-        <div id=NI_U>
-            <h3>important and Urgent</h3>
-            <!-- This will show all the Tasks -->
-            <ul class="TaksList" id="NI_U_L">
-                <!-- tasks will come from local storage -->
-            </ul>
-        </div>
-        <div id=I_NU>
-            <h3>important and Urgent</h3>
-            <!-- This will show all the Tasks -->
-            <ul class="TaksList" id="I_NU_L">
-                <!-- tasks will come from local storage -->
-            </ul>
-        </div>
-        <div id=NI_NU>
-            <h3>important and Urgent</h3>
-            <!-- This will show all the Tasks -->
-            <ul class="TaksList" id="NI_NU_L">
-                <!-- tasks will come from local storage -->
-            </ul>
-        </div>
-            <p id = "RandomQuotes">
-                Quote will come here 
+            <div id=I_U>
+                <h3>important and Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="I_U_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <div id=NI_U>
+                <h3>important and Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="NI_U_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <div id=I_NU>
+                <h3>important and Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="I_NU_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <div id=NI_NU>
+                <h3>important and Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="NI_NU_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <p id="RandomQuotes">
+                Quote will come here
             </p>
         </main>
     </div>
