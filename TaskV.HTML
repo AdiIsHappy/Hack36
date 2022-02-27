@@ -1,113 +1,227 @@
-<!DOCTYPE html>
-<html lang="en">
+const infoPopup = document.getElementById("info_Popup")
+const addTaskPopup = document.getElementById("Add_Task_popup")
+const overlay = document.getElementById("overlay")
+const taskLists = document.getElementsByClassName("TaksList")
+let previouslyOpened = null;
+const quotes = ["Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "The more you know yourself, the more you forgive yourself.",
+    "Someone remembers, someone cares; your name is whispered in someone's prayers.",
+    "Without faith, nothing is possible. With it, nothing is impossible.",
+    "Once we accept our limits, we go beyond them.",
+    "Don't be pushed by your problems; be led by your dreams.",
+    "Whatever we expect with confidence becomes our own self-fulfilling prophecy.",
+    "Everything you can imagine is real.",
+    "Fear is a arkroom where negatives develop.",
+    "The truest wisdom is a resolute determination.",
+    "Life is the flower for which love is the honey.",
+    "Freedom is the right to live as we wish.",
+    "Change your thoughts, change your life!",
+    "No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.",
+    "The moment one gives close attention to anything, it becomes a mysterious, awesome, indescribably magnificent world in itself.",
+    "Happiness is when what you think, what you say, and what you do are in harmony.",
+    "The greatest antidote to insecurity and the sense of fear is compassion it brings one back to the basis of one's inner strength",
+    "Courage is the discovery that you may not win, and trying when you know you can lose.",
+    "To be thoughtful and kind only takes a few seconds compared to the timeless hurt caused by one rude gesture.",
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="TaskV.css">
-    <script defer src="TaskV.js"></script>
-    <title>Task</title>
-</head>
+]
+document.getElementById("RandomQuotes").innerText = quotes[Math.floor(Math.random() * quotes.length)]
+    // thses all are inputs from add task form 
+const Title = document.getElementById("title")
+const R1 = document.getElementById("1")
+const R2 = document.getElementById("2")
+const R3 = document.getElementById("3")
+const R4 = document.getElementById("4")
+const Sdate = document.getElementById("StartDate")
+const Stime = document.getElementById("StartTime")
+const Link = document.getElementById("Link")
+const desc = document.getElementById("Description")
+const reset = document.getElementById("Reset")
+const addBtn = document.getElementById("AddToTask")
+const clearAllButton = document.getElementById("Calender_Button")
 
-<body>
+addBtn.onclick = () => {}
+reset.onclick = () => {}
 
+showTasks()
 
-    <!-- Info PopUp -->
-    <div class="Info " id="info_Popup">
-        <div id="Header" id="Info_Popup_Header">
-            <div class="Text" , id="Info_Popup_Header_Text"> INFO</div>
-            <div id="Info_Popup_Header_Close"><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit" ,>&times;</button> </div>
-        </div>
-        <div class="Content" id="Info_Popup_Contnet">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga mollitia est ab dolorum nam aliquid corporis recusandae, deleniti provident, inventore fugit dignissimos laudantium repudiandae maxime ea, illum culpa ad delectus quasi earum quod laboriosam
-            quisquam accusantium? Cum quisquam alias natus dolorum eveniet aut quam ab beatae perspiciatis, ipsa, dicta perferendis in accusantium, et reprehenderit fugit laboriosam error. Soluta dolorum atque magni dicta vero porro dolore libero voluptas
-            blanditiis, dignissimos culpa doloremque voluptates sed! Possimus consequatur nobis esse, quidem odit facilis?
-        </div>
-    </div>
+function openInfoPopup() {
+    infoPopup.classList.add("active")
+    overlay.classList.add("active")
+}
 
-    <!-- Add Task PopUp -->
-    <div class="AddTask" id="Add_Task_popup">
-        <input type="text" placeholder="Add Task" name="Title" id="title">
-        <button onclick="closeAddTaskPopup()" type="button" class="closekro">&times;</button> <br>
-        
-        <p>Due Date & Time :
-        <!-- <hr color="#FF9F45" width="60%" style="margin-left: 15%; height: 0.5px;" > -->
-        <input type="date" name="Start Date" id="StartDate">
-        <input type="time" name="Start Date" id="StartTime">
-        </p>
-        <input type="text" name="Link" id="Link" placeholder="Link"><br>
-        <textarea name="Description" id="Description" cols="30" rows="5" placeholder="desc..."
-        style="resize: none;"></textarea><br>
-        <input type="radio" name="type" class="r_1" id=1><label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
-font-style: normal;
-font-weight: bolder"> Uregent | Important</label> <br>
-        <input type="radio" name="type" class="r_2"id=2><label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
-font-style: normal;
-font-weight: bolder"> Not-Urgent | Important</label> <br>
-        <input type="radio" name="type" class="r_3" id=3> <label style=" color: rgb(255, 159, 69); padding: 7px;font-size: 20px; font-family: Roboto;
-font-style: normal;
-font-weight: bolder">Urgent | Important </label><br>
-        <input type="radio" name="type" class="r_4"id=4> <label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
-font-style: normal;
-font-weight: bolder">Not-Urgent | Not-Important</label> <br>
+function closeInfoPopup() {
+    infoPopup.classList.remove("active")
+    overlay.classList.remove("active")
+}
 
-        <button type="button" id="AddToTask">Add to task</button>
-        <button type="button" id="Reset">Reset</button>
+function openAddTaskPopup() {
+    addTaskPopup.classList.add("active")
+    overlay.classList.add("active")
+}
 
-    </div>
+function closeAddTaskPopup() {
+    resetInputs()
+    ValueChanged()
+    addTaskPopup.classList.remove("active")
+    overlay.classList.remove("active")
+}
 
-    </div>
-    <!-- this overlay will be activated on any popup activation -->
-    <div id="overlay"></div>
+function resetInputs() {
+    Title.value = ""
+    R1.checked = false
+    R2.checked = false
+    R3.checked = false
+    R4.checked = false
+    Sdate.value = ""
+    Stime.value = ""
+    Link.value = ""
+    desc.value = ""
+    ValueChanged()
+}
 
-    <!-- Main Body of page  -->
-    <div class="Tasks" id="TaskViewr">
-        <main>
-            <div class="whatisthis">
-                <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
-            </div>
-            <div class="calender">
-                <button class="CalanderButton" id="Calender_Button">Clear Tasks</button>
-            </div>
-            <div class="addtask">
-                <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
-            </div>
-            <div id=I_U>
-                <h3>important and Urgent</h3>
-                <!-- This will show all the Tasks -->
-                <ul class="TaksList" id="I_U_L">
-                    <!-- tasks will come from local storage -->
-                </ul>
-            </div>
-            <div id=NI_U>
-                <h3>important and Urgent</h3>
-                <!-- This will show all the Tasks -->
-                <ul class="TaksList" id="NI_U_L">
-                    <!-- tasks will come from local storage -->
-                </ul>
-            </div>
-            <div id=I_NU>
-                <h3>important and Urgent</h3>
-                <!-- This will show all the Tasks -->
-                <ul class="TaksList" id="I_NU_L">
-                    <!-- tasks will come from local storage -->
-                </ul>
-            </div>
-            <div id=NI_NU>
-                <h3>important and Urgent</h3>
-                <!-- This will show all the Tasks -->
-                <ul class="TaksList" id="NI_NU_L">
-                    <!-- tasks will come from local storage -->
-                </ul>
-            </div>
-            <p id="RandomQuotes">
-                Quote will come here
-            </p>
-        </main>
-    </div>
+overlay.onclick = () => {
+    closeAddTaskPopup()
+    closeInfoPopup()
+}
 
 
-</body>
+function addButtonFunc() {
 
-</html>
+    if (R1.checked) {
+        typo = 1
+        Storagename = "I_U_L"
+    } else if (R2.checked) {
+        typo = 2
+        Storagename = "NI_U_L"
+    } else if (R3.checked) {
+        typo = 3
+        Storagename = "I_NU_L"
+    } else if (R4.checked) {
+        typo = 4
+        Storagename = "NI_NU_L"
+    } else {
+        alert("Please select type of Task")
+        return;
+    }
+
+    let getLocalStorageData = localStorage.getItem(Storagename);
+    if (getLocalStorageData == null) { //if localstorage has no data
+        listArray = []; //create a blank array
+    } else {
+        listArray = JSON.parse(getLocalStorageData); //transforming json string into a js object
+    }
+    task = {
+        storageName: Storagename,
+        id: listArray.length,
+        title: Title.value,
+        type: typo,
+        startDate: Sdate.value,
+        startTime: Stime.value,
+        link: Link.value,
+        description: desc.value
+    }
+
+    listArray.push(task); //pushing or adding new value in array
+    localStorage.setItem(Storagename, JSON.stringify(listArray));
+    showTasks()
+    resetInputs()
+}
+
+
+function showTasks() {
+    for (let i = 0; i < taskLists.length; i++) {
+        let getLocalStorageData = localStorage.getItem(taskLists[i].id);
+        if (getLocalStorageData == null) {
+            listArray = [];
+        } else {
+            listArray = JSON.parse(getLocalStorageData);
+        }
+        let newLiTag = "";
+        listArray.forEach((element, index) => {
+            var added = 0;
+            newLiTag += `<li>
+            <button onclick="showDetails(this)">${element.title}</button>
+            <button onclick = "deleteTask(this)", class = "${element.storageName} ${element.id}"S>done</button>
+            <ul class = "ShowDetialOfTask">`
+
+            if (element.startDate != "" && element.startTime != "") {
+                added = 1
+                newLiTag += `<li>deadline : ${element.startDate} ${element.startTime}</li>`
+
+            } else if (element.startDate == "" && element.startTime != "") {
+                added = 1
+                var today = new Date()
+                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                newLiTag += `<li>deadline : ${date} ${element.startTime}</li>`
+            } else if (element.startDate != "" && element.startTime == "") {
+                added = 1
+                newLiTag += `<li>deadline :${element.startDate}</li>`
+            }
+            if (element.link != "") {
+                added = 1
+                newLiTag += `<li>link : ${element.link}</li>`
+            }
+            if (element.description != "") {
+                added = 1
+                newLiTag += `<li>description : ${element.description}</li>`
+            }
+            if (added == 0) {
+                newLiTag += `<li> No additional data was provided </li>`
+            }
+            newLiTag += `</ul>
+                        </li>`
+        });
+        taskLists[i].innerHTML = newLiTag;
+    }
+}
+
+function showDetails(element) {
+    if (previouslyOpened != null) {
+        previouslyOpened.classList.remove("active")
+    }
+    element.parentElement.lastElementChild.classList.add("active")
+    previouslyOpened = element.parentElement.lastElementChild
+}
+
+function deleteTask(element) {
+    const deleteStorageName = element.classList[0]
+    const deleteIndex = element.classList[1]
+    let getLocalStorageData = localStorage.getItem(deleteStorageName);
+    if (getLocalStorageData == null) {
+        return
+    } else {
+        listArray = JSON.parse(getLocalStorageData);
+    }
+    listArray.splice(deleteIndex, 1)
+    for (let i = deleteIndex; i < listArray.length; i++) {
+        listArray[i].id -= 1
+    }
+    localStorage.setItem(deleteStorageName, JSON.stringify(listArray));
+    showTasks()
+
+}
+
+clearAllButton.onclick = () => {
+    localStorage.clear()
+    showTasks()
+}
+
+function ValueChanged() {
+    if (Title.value.length != 0 && (R1.checked || R2.checked || R3.checked || R4.checked)) {
+        addBtn.onclick = addButtonFunc
+        console.log(1);
+        addBtn.classList.add("active")
+
+    } else {
+        addBtn.onclick = () => {}
+        console.log(2);
+        addBtn.classList.remove("active")
+    }
+    if (Title.value.length != 0 || R1.checked || R2.vchecked || R3.checked || R4.checked || Sdate.value.length != 0 || Stime.value.length != 0 || Link.value.length != 0 || desc.value.length != 0) {
+        reset.classList.add("active")
+        reset.onclick = resetInputs
+    } else {
+        reset.classList.remove("active")
+        reset.onclick = () => {}
+    }
+}
