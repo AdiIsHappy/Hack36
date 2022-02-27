@@ -209,12 +209,10 @@ clearAllButton.onclick = () => {
 function ValueChanged() {
     if (Title.value.length != 0 && (R1.checked || R2.checked || R3.checked || R4.checked)) {
         addBtn.onclick = addButtonFunc
-        console.log(1);
         addBtn.classList.add("active")
 
     } else {
         addBtn.onclick = () => {}
-        console.log(2);
         addBtn.classList.remove("active")
     }
     if (Title.value.length != 0 || R1.checked || R2.vchecked || R3.checked || R4.checked || Sdate.value.length != 0 || Stime.value.length != 0 || Link.value.length != 0 || desc.value.length != 0) {
