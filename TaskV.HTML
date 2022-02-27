@@ -28,24 +28,24 @@
 
     <!-- Add Task PopUp -->
     <div class="AddTask" id="Add_Task_popup">
-        <input type="text" placeholder="Add Task" name="Title" id="title">
+        <input type="text" placeholder="Add Task" name="Title" id="title" onchange="ValueChanged()">
         <button onclick="closeAddTaskPopup()" type="button" class="closekro">&times;</button> <br>
 
         <p>Due Date & Time </p>
-        <hr color="#FF9F45" width="60%" style="margin-left: 15%; height: 0.5px;">
-        <input type="date" name="Start Date" id="StartDate">
-        <input type="time" name="Start Date" id="StartTime"><br>
-        <input type="text" name="Link" id="Link" placeholder="Link"><br>
-        <textarea name="Description" id="Description" cols="30" rows="5" placeholder="desc..." style="resize: none;"></textarea><br>
-        <input type="radio" name="type" class="r_1" id=1><label style=" color: #FF9F45;padding: 7px;font-size: 20px;">
+        <hr color="#FF9F45" width="60%" style="margin-left: 15%; height: 0.5px;" onchange="ValueChanged()">
+        <input type="date" name="Start Date" id="StartDate" onchange="ValueChanged()">
+        <input type="time" name="Start Date" id="StartTime" onchange="ValueChanged()"><br>
+        <input type="text" name="Link" id="Link" placeholder="Link" onchange="ValueChanged()"><br>
+        <textarea name="Description" id="Description" cols="30" rows="5" placeholder="desc..." style="resize: none;" onchange="ValueChanged()"></textarea><br>
+        <input type="radio" name="type" class="r_1" id=1 onchange="ValueChanged()"><label style=" color: #FF9F45;padding: 7px;font-size: 20px;">
             Uregent | Important</label> <br>
-        <input type="radio" name="type" class="r_2" id=2><label style=" color: #FF9F45;padding: 7px;font-size: 20px;">
+        <input type="radio" name="type" class="r_2" id=2 onchange="ValueChanged()"><label style=" color: #FF9F45;padding: 7px;font-size: 20px;">
             Not-Urgent | Important</label> <br>
-        <input type="radio" name="type" class="r_3" id=3> <label style=" color: rgb(255, 159, 69); padding: 7px;font-size: 20px;">Urgent | Not-Important </label><br>
-        <input type="radio" name="type" class="r_4" id=4> <label style=" color: #FF9F45;padding: 7px;font-size: 20px;">Not-Urgent | Not-Important</label> <br>
+        <input type="radio" name="type" class="r_3" id=3 onchange="ValueChanged()"> <label style=" color: rgb(255, 159, 69); padding: 7px;font-size: 20px;">Urgent | Not-Important </label><br>
+        <input type="radio" name="type" class="r_4" id=4 onchange="ValueChanged()"> <label style=" color: #FF9F45;padding: 7px;font-size: 20px;">Not-Urgent | Not-Important</label> <br>
 
-        <button type="button" class="AddToTask">Add to task</button>
-        <button type="button" class="Reset">Reset</button>
+        <button type="button" class="AddToTask" id="AddToTask">Add to task</button>
+        <button type="button" class="Reset" id="Reset">Reset</button>
 
     </div>
 
