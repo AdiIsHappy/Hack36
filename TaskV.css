@@ -90,10 +90,7 @@
     transform: scale(1);
 }
 
-.ShowDetialOfTask {
-    background-color: aquamarine;
-    display: none;
-}
+
 
 .ShowDetialOfTask.active {
     display: block;
@@ -162,9 +159,10 @@ main {
     height: 100%;
     margin: 0%;
     display: grid;
-    grid-template-rows: 12% 12% 12% 12% 48% 4%;  
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50% ;  
     /* new  */
     grid-template-columns: 40% 40% 20%;
+   
 }
 
 #I_U {
@@ -185,16 +183,17 @@ main {
 }
 
 #NI_U {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 5;
     height: 300px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
+    
 }
 
 #NI_NU {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 5;
     height: 300px;
     background-color: #7958ee;
@@ -391,11 +390,11 @@ input[type='radio']:checked:after {
     border-radius: 10px;
     background: transparent;
 }
-
+/* new */
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 0px;
     background: transparent;
-    height: 2px;
+    height: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -428,7 +427,16 @@ body{
 }
 #RandomQuotes{
     grid-row: 6;
-    grid-column: 1/-1;
+    grid-column: 3;
+    grid-row: 5;
+    font-family: Rochester;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 62px;
+    text-align: center;
+    color: #FC4F4F;
+    margin: 0;
 }
 h3{
     box-sizing: border-box;
@@ -463,7 +471,7 @@ ul li{
     border-radius: 5px;
     height: 30px;
     display:grid;
-    grid-template-columns: 85% 15%;
+    grid-template-columns: 95% 5%;
     grid-template-rows: 100%;
 }
 ul{
@@ -471,37 +479,37 @@ ul{
 }
 .MarkDone{
     grid-column: 2;
-
+    background-image:url(rect312250.png) ;
+    background-size: cover;
     float: right;
     background-color: greenyellow;
     color: white;
     border: 0;
     margin: 0;
     height: 100%;
-    opacity: 0;
+    opacity: 1;
 }
 .TaskTitle{
     grid-column: 1;
 
     border: 0;
     opacity: 1;
+    background-color: white;
 
 }
-.MarkDone:hover{
-    grid-column: 2;
- 
-    float: right;
-    background-color: greenyellow;
-    color: white;
-    border: 0;
-    margin: 0;
-    height: 100%;
-    opacity: 1;
-}
+
 .TaskTitle:hover{
     grid-column: 1;
-
+    background-color: #d1d3d1;
     border: 0;
     opacity: 1;
 
+}
+.ShowDetialOfTask{
+    display: none;
+    padding-left: 10px;
+}
+.ShowDetialOfTask.active li{
+    border: 0;
+    font-size: 14px;
 }
