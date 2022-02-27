@@ -1,8 +1,8 @@
-.Info{
-    position:absolute;
-    top : 50%;
+.Info {
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
 
     background-color: rgb(198, 168, 247);
     padding: 10px;
@@ -12,18 +12,19 @@
     border-radius: 30px;
     transition: 200ms;
 }
+
 .Info.active {
-transform: translate(-50%,-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 
 .AddTask.active {
-transform: translate(-50%,-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.Text{
+.Text {
     position: absolute;
-    text-align:justify;
+    text-align: justify;
     width: 174px;
     height: 75px;
     left: 45%;
@@ -35,7 +36,8 @@ transform: translate(-50%,-50%) scale(1);
     font-size: 48px;
     line-height: 56px;
 }
-.Content{
+
+.Content {
     position: relative;
     font-family: Roboto;
     font-style: normal;
@@ -57,22 +59,25 @@ transform: translate(-50%,-50%) scale(1);
     right: 0;
     bottom: 0;
     transition: 200ms;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     pointer-events: none;
     z-index: 49;
 }
-#overlay.active{
+
+#overlay.active {
     opacity: 1;
     pointer-events: all;
 }
-#Info_Popup_Header_Close{
+
+#Info_Popup_Header_Close {
     background: transparent;
     border: 0;
     font-size: larger;
     text-align: right;
     left: 1266px;
 }
-.Info_Popup_Header_Quit{
+
+.Info_Popup_Header_Quit {
     background: transparent;
     border: 0;
     font-size: larger;
@@ -83,11 +88,11 @@ transform: translate(-50%,-50%) scale(1);
     transform: scale(0);
 }
 
-.taskPreviewBlock  ul  div :hover .taskPreview{
+.taskPreviewBlock ul div :hover .taskPreview {
     transform: scale(1);
 }
 
-.ShowDetialOfTask  {
+.ShowDetialOfTask {
     background-color: aquamarine;
     display: none;
 
@@ -96,9 +101,10 @@ transform: translate(-50%,-50%) scale(1);
 .ShowDetialOfTask.active {
     display: block;
 }
+
 /*new*/
-.AddTaskButton{
-    
+.AddTaskButton {
+
     width: 200px;
     height: 56px;
     float: right;
@@ -107,17 +113,18 @@ transform: translate(-50%,-50%) scale(1);
 
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
-    text-align: left ;
-    
+    text-align: left;
+
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 56px;
     padding-left: 30px;
-    
+
 }
-.CalanderButton{
+
+.CalanderButton {
     /*position: absolute;*/
     width: 200px;
     height: 56px;
@@ -127,7 +134,7 @@ transform: translate(-50%,-50%) scale(1);
 
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
-    text-align: left ;
+    text-align: left;
     /*position: relative;*/
     font-family: Roboto;
     font-style: normal;
@@ -135,13 +142,13 @@ transform: translate(-50%,-50%) scale(1);
     font-size: 20px;
     line-height: 56px;
     padding-left: 30px;
-    
+
 }
 
 
-    
 
-.Infobutton{
+
+.Infobutton {
     /*position: absolute;*/
     width: 200px;
     height: 56px;
@@ -151,7 +158,7 @@ transform: translate(-50%,-50%) scale(1);
 
     background: #7958ee;
     border-radius: 180px 0px 0px 180px;
-    text-align: left ;
+    text-align: left;
     /*position: relative;*/
     font-family: Roboto;
     font-style: normal;
@@ -160,24 +167,27 @@ transform: translate(-50%,-50%) scale(1);
     line-height: 56px;
     padding-left: 30px;
 }
-main{
+
+main {
     width: 100%;
     height: 100%;
-    margin:0%;
+    margin: 0%;
     display: grid;
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 50%;
     grid-template-columns: 40% 40% 20%;
-    
+
 
 }
-#I_U{
+
+#I_U {
     grid-row: 1/4;
     height: 300px;
     background-color: #7958ee;
     padding: 10px;
     border: 10px solid white;
 }
-#I_NU{
+
+#I_NU {
     grid-column: 2;
     grid-row: 1/4;
     height: 300px;
@@ -186,7 +196,8 @@ main{
     border: 10px solid white;
 
 }
-#NI_U{
+
+#NI_U {
     grid-column: 2;
     grid-row: 5;
     height: 300px;
@@ -194,7 +205,8 @@ main{
     padding: 10px;
     border: 10px solid white;
 }
-#NI_NU{
+
+#NI_NU {
     grid-column: 1;
     grid-row: 5;
     height: 300px;
@@ -202,23 +214,27 @@ main{
     padding: 10px;
     border: 10px solid white;
 }
-.whatisthis{
+
+.whatisthis {
     grid-column: 3;
     grid-row: 1;
 }
-.addtask{
+
+.addtask {
     grid-column: 3;
     grid-row: 2;
 }
-.calendar{
+
+.calendar {
     grid-column: 3;
     grid-row: 3;
 }
-.AddTask{
-    position:absolute;
-    top : 50%;
+
+.AddTask {
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
 
     background-color: rgb(255, 255, 255);
     padding: 10px;
@@ -227,11 +243,13 @@ main{
     z-index: 50;
     border-radius: 30px;
     transition: 200ms;
+    border: solid 3px #FF9F45;
 }
-#title{
+
+#title {
     font-size: 32px;
-    border:0px;
-    border-bottom: solid 2px #FF9F45 ;
+    border: 0px;
+    border-bottom: solid 2px #FF9F45;
     background-color: transparent;
     font-family: Roboto;
     font-style: normal;
@@ -241,19 +259,24 @@ main{
     margin-left: 15%;
     margin-right: 15%;
     color: #FF9F45;
-    width:60%
-
+    width: 60%
 }
-::placeholder{
+
+::placeholder {
     color: #FF9F45;
 }
-.r_1,.r_2,.r_3,.r_4{
+
+.r_1,
+.r_2,
+.r_3,
+.r_4 {
     margin-left: 15%;
     color: #FF9F45;
     font-size: 13px;
     padding: 20px;
 
 }
+
 input[type='radio']:after {
     width: 15px;
     height: 15px;
@@ -281,7 +304,8 @@ input[type='radio']:checked:after {
     visibility: visible;
     border: 2px solid white;
 }
-.AddTask p{
+
+.AddTask p {
     margin: 0px;
     margin-left: 15%;
     color: #FF9F45;
@@ -291,7 +315,9 @@ input[type='radio']:checked:after {
     font-size: 20px;
 
 }
-#StartDate,#StartTime{
+
+#StartDate,
+#StartTime {
     border: 0px;
     border-bottom: solid 2px #FF9F45;
     color: #FF9F45;
@@ -302,9 +328,11 @@ input[type='radio']:checked:after {
     margin-left: 15%;
 
 }
-#StartTime{
+
+#StartTime {
     margin: 0;
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     color: #FF9F45;
     opacity: 0;
@@ -314,28 +342,46 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     /* height: 20px; */
     /* border-width: thin; */
 }
-input[type="time"]::-webkit-calendar-picker-indicator { background: none; display:none; }
 
-#Link,#Description{
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
+}
+
+#Link,
+#Description {
     margin-left: 15%;
     border: 0;
     border-bottom: solid 2px #FF9F45;
     font-size: 20px;
     width: 60%;
 }
-#AddToTask,#Reset{
+
+#AddToTask,
+#Reset {
     border: 0px;
     background-color: #FF9F45;
     border-radius: 5px;
     padding: 10px;
     margin-top: 30px;
+    font-size: 24px;
+    color: white;
+
 }
-#AddToTask{
+
+#AddToTask {
     margin-left: 15%;
 }
-.closekro{
+
+.closekro {
     background: transparent;
     border: 0;
     color: #FF9F45;
     font-size: 25px;
+}
+
+#Reset {
+    margin-left: 10%;
+    padding-left: 30px;
+    padding-right: 30px;
 }
