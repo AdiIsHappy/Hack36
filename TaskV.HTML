@@ -22,11 +22,10 @@
     <!-- Info PopUp -->
     <div class="Info " id="info_Popup">
         <div id="Header" id="Info_Popup_Header">
-            <div class="Text" , id="Info_Popup_Header_Text"> INFO</div>
             <div id="Info_Popup_Header_Close"><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit" ,>&times;</button> </div>
         </div>
         <div class="Content" id="Info_Popup_Contnet">
-            <img src="ima.png" alt="image explaining about task manager">
+            <img src="ima.png" alt="image explaining about task manager" id="InfoImage">
         </div>
     </div>
 
@@ -45,13 +44,13 @@
         <p>Select Type *</p>
         <input type="radio" name="type" class="r_1" id=1 onchange="ValueChanged()"><label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
 font-style: normal;
-font-weight: bolder"> Uregent | Important</label> <br>
+font-weight: bolder"> Urgent | Important</label> <br>
         <input type="radio" name="type" class="r_2" id=2 onchange="ValueChanged()"><label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
 font-style: normal;
 font-weight: bolder"> Not-Urgent | Important</label> <br>
         <input type="radio" name="type" class="r_3" id=3 onchange="ValueChanged()"> <label style=" color: rgb(255, 159, 69); padding: 7px;font-size: 20px; font-family: Roboto;
 font-style: normal;
-font-weight: bolder">Urgent | Important </label><br>
+font-weight: bolder">Urgent | Not-Important </label><br>
         <input type="radio" name="type" class="r_4" id=4 onchange="ValueChanged()"> <label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
 font-style: normal;
 font-weight: bolder">Not-Urgent | Not-Important</label> <br>
@@ -85,14 +84,14 @@ font-weight: bolder">Not-Urgent | Not-Important</label> <br>
                 </ul>
             </div>
             <div id=NI_U>
-                <h3>Not-Important but Urgent</h3>
+                <h3>Important but Not-Urgent</h3>
                 <!-- This will show all the Tasks -->
                 <ul class="TaksList" id="NI_U_L">
                     <!-- tasks will come from local storage -->
                 </ul>
             </div>
             <div id=I_NU>
-                <h3>Important but Not-Urgent</h3>
+                <h3>Not-Important but Urgent</h3>
                 <!-- This will show all the Tasks -->
                 <ul class="TaksList" id="I_NU_L">
                     <!-- tasks will come from local storage -->
