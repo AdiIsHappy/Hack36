@@ -22,10 +22,10 @@ const quotes = ["Genius is one percent inspiration and ninety-nine percent persp
     "The greatest antidote to insecurity and the sense of fear is compassion it brings one back to the basis of one's inner strength",
     "Courage is the discovery that you may not win, and trying when you know you can lose.",
     "To be thoughtful and kind only takes a few seconds compared to the timeless hurt caused by one rude gesture.",
-  
+
 ]
-document.getElementById("RandomQuotes").innerText = quotes[Math.floor(Math.random()*quotes.length)]
-// thses all are inputs from add task form 
+document.getElementById("RandomQuotes").innerText = quotes[Math.floor(Math.random() * quotes.length)]
+    // thses all are inputs from add task form 
 const Title = document.getElementById("title")
 const R1 = document.getElementById("1")
 const R2 = document.getElementById("2")
@@ -41,18 +41,22 @@ const clearAllButton = document.getElementById("Calender_Button")
 
 
 showTasks()
+
 function openInfoPopup() {
     infoPopup.classList.add("active")
     overlay.classList.add("active")
 }
+
 function closeInfoPopup() {
     infoPopup.classList.remove("active")
     overlay.classList.remove("active")
 }
+
 function openAddTaskPopup() {
     addTaskPopup.classList.add("active")
     overlay.classList.add("active")
 }
+
 function closeAddTaskPopup() {
     addTaskPopup.classList.remove("active")
     overlay.classList.remove("active")
@@ -101,11 +105,11 @@ addBtn.onclick = () => {
     if (getLocalStorageData == null) { //if localstorage has no data
         listArray = []; //create a blank array
     } else {
-        listArray = JSON.parse(getLocalStorageData);  //transforming json string into a js object
+        listArray = JSON.parse(getLocalStorageData); //transforming json string into a js object
     }
     task = {
-        storageName : Storagename,
-        id : listArray.length,
+        storageName: Storagename,
+        id: listArray.length,
         title: Title.value,
         type: typo,
         startDate: Sdate.value,
@@ -131,14 +135,38 @@ function showTasks() {
         }
         let newLiTag = "";
         listArray.forEach((element, index) => {
+            var added = 0;
             newLiTag += `<li>
-                            <button onclick="showDetails(this)">${element.title}</button>
-                            <button onclick = "deleteTask(this)", class = "${element.storageName} ${element.id}"S>done</button>
-                            <ul class = "ShowDetialOfTask">
-                                <li>deadline : ${element.startDate || ""} ${element.Stime || ""}</li>
-                                <li>link : ${element.Link || "not given"}</li>
-                                <li>description : ${element.desc || "no description provided"}</li>
-                            </ul>
+            <button onclick="showDetails(this)">${element.title}</button>
+            <button onclick = "deleteTask(this)", class = "${element.storageName} ${element.id}"S>done</button>
+            <ul class = "ShowDetialOfTask">`
+
+            if (element.startDate != "" && element.startTime != "") {
+                added = 1
+                newLiTag += `<li>deadline : ${element.startDate} ${element.startTime}</li>`
+
+            } else if (element.startDate == "" && element.startTime != "") {
+                added = 1
+                var today = new Date()
+                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                console.log(date);
+                newLiTag += `<li>deadline : ${date} ${element.startTime}</li>`
+            } else if (element.startDate != "" && element.startTime == "") {
+                added = 1
+                newLiTag += `<li>deadline :${element.startDate}</li>`
+            }
+            if (element.link != "") {
+                added = 1
+                newLiTag += `<li>link : ${element.link}</li>`
+            }
+            if (element.description != "") {
+                added = 1
+                newLiTag += `<li>description : ${element.description}</li>`
+            }
+            if (added == 0) {
+                newLiTag += `<li> No additional data was provided </li>`
+            }
+            newLiTag += `</ul>
                         </li>`
         });
         taskLists[i].innerHTML = newLiTag;
@@ -150,7 +178,7 @@ function showDetails(element) {
         previouslyOpened.classList.remove("active")
     }
     element.parentElement.lastElementChild.classList.add("active")
-    previouslyOpened =  element.parentElement.lastElementChild
+    previouslyOpened = element.parentElement.lastElementChild
 }
 
 function deleteTask(element) {
@@ -169,13 +197,10 @@ function deleteTask(element) {
     console.log(deleteIndex - 1);
     localStorage.setItem(deleteStorageName, JSON.stringify(listArray));
     showTasks()
-    
+
 }
 
 clearAllButton.onclick = () => {
     localStorage.clear()
     showTasks()
 }
-
-
-
