@@ -140,8 +140,8 @@ function showTasks() {
         listArray.forEach((element, index) => {
             var added = 0;
             newLiTag += `<li>
-            <button onclick="showDetails(this)">${element.title}</button>
-            <button onclick = "deleteTask(this)", class = "${element.storageName} ${element.id}"S>done</button>
+            <button onclick="showDetails(this)" class = "TaskTitle">${element.title}</button>
+            <button onclick = "deleteTask(this)", class = "MarkDone ${element.storageName} ${element.id}"S>done</button>
             <ul class = "ShowDetialOfTask">`
 
             if (element.startDate != "" && element.startTime != "") {
@@ -209,10 +209,12 @@ clearAllButton.onclick = () => {
 function ValueChanged() {
     if (Title.value.length != 0 && (R1.checked || R2.checked || R3.checked || R4.checked)) {
         addBtn.onclick = addButtonFunc
+        console.log(1);
         addBtn.classList.add("active")
 
     } else {
         addBtn.onclick = () => {}
+        console.log(2);
         addBtn.classList.remove("active")
     }
     if (Title.value.length != 0 || R1.checked || R2.vchecked || R3.checked || R4.checked || Sdate.value.length != 0 || Stime.value.length != 0 || Link.value.length != 0 || desc.value.length != 0) {
