@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="TaskV.css">
+    <script defer src="TaskV.js"></script>
+    <title>Task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- Info PopUp -->
+    <div class="Info " id="info_Popup">
+        <div id="Header" id="Info_Popup_Header">
+            <div id="Info_Popup_Header_Close"><button onclick="closeInfoPopup()" class="Info_Popup_Header_Quit" ,>&times;</button> </div>
+        </div>
+        <div class="Content" id="Info_Popup_Contnet">
+            <img src="ima.png" alt="image explaining about task manager" id="InfoImage">
+        </div>
+    </div>
+
+    <!-- Add Task PopUp -->
+    <div class="AddTask" id="Add_Task_popup">
+        <input type="text" placeholder="Add Task *" name="Title" id="title" onchange="ValueChanged()">
+        <button onclick="closeAddTaskPopup()" type="button" class="closekro" onchange="ValueChanged()">&times;</button> <br>
+
+        <p>Due Date & Time :
+            <!-- <hr color="#FF9F45" width="60%" style="margin-left: 15%; height: 0.5px;" > -->
+            <input type="date" name="Start Date" id="StartDate" onchange="ValueChanged()">
+            <input type="time" name="Start Date" id="StartTime" onchange="ValueChanged()">
+        </p>
+        <input type="text" name="Link" id="Link" placeholder="Link" onchange="ValueChanged()"><br>
+        <textarea name="Description" id="Description" cols="30" rows="5" placeholder="desc..." style="resize: none;" onchange="ValueChanged()"></textarea><br>
+        <p>Select Type *</p>
+        <input type="radio" name="type" class="r_1" id=1 onchange="ValueChanged()"><label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
+font-style: normal;
+font-weight: bolder"> Urgent | Important</label> <br>
+        <input type="radio" name="type" class="r_2" id=2 onchange="ValueChanged()"><label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
+font-style: normal;
+font-weight: bolder"> Not-Urgent | Important</label> <br>
+        <input type="radio" name="type" class="r_3" id=3 onchange="ValueChanged()"> <label style=" color: rgb(255, 159, 69); padding: 7px;font-size: 20px; font-family: Roboto;
+font-style: normal;
+font-weight: bolder">Urgent | Not-Important </label><br>
+        <input type="radio" name="type" class="r_4" id=4 onchange="ValueChanged()"> <label style=" color: #FF9F45;padding: 7px;font-size: 20px; font-family: Roboto;
+font-style: normal;
+font-weight: bolder">Not-Urgent | Not-Important</label> <br>
+
+        <button type="button" class="AddToTask" id="AddToTask">Add to task</button>
+        <button type="button" class="Reset" id="Reset">Reset</button>
+
+    </div>
+
+    </div>
+    <!-- this overlay will be activated on any popup activation -->
+    <div id="overlay"></div>
+
+    <!-- Main Body of page  -->
+    <div class="Tasks" id="TaskViewr">
+        <main>
+            <div class="whatisthis">
+                <button onclick="openInfoPopup()" class="Infobutton" id="Info_Button">What is This</button>
+            </div>
+            <div class="calender">
+                <button class="CalanderButton" id="Calender_Button">Clear Tasks</button>
+            </div>
+            <div class="addtask">
+                <button onclick="openAddTaskPopup()" class="AddTaskButton" id="Add_Task_Button">Add Task</button>
+            </div>
+            <div id=I_U>
+                <h3>Important and Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="I_U_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <div id=NI_U>
+                <h3>Important but Not-Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="NI_U_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <div id=I_NU>
+                <h3>Not-Important but Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="I_NU_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <div id=NI_NU>
+                <h3>Neither-Important Nor-Urgent</h3>
+                <!-- This will show all the Tasks -->
+                <ul class="TaksList" id="NI_NU_L">
+                    <!-- tasks will come from local storage -->
+                </ul>
+            </div>
+            <p id="RandomQuotes">
+                Quote will come here
+            </p>
+        </main>
+    </div>
+
+
+</body>
+
+</html>
